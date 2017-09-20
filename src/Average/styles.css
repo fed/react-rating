@@ -1,0 +1,24 @@
+.Average {
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #d2d0d2;
+  border-radius: 5px;
+  display: inline-flex;
+  padding: 24px;
+}
+
+.Average__title {
+  color: #4a4a4a;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.Average__stars {
+  display: inherit;
+}
+
+.Average__star {
+  width: 21px;
+  height: 20px;
+}

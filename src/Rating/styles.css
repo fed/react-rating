@@ -1,0 +1,100 @@
+.Rating {
+  display: inline-block;
+}
+
+.Rating__message {
+  display: none;
+}
+
+.Rating__form {
+  background-color: #fff;
+  border: 1px solid #d2d0d2;
+  border-radius: 5px;
+  box-shadow: inset 0 0 4px 1px #c7c6c8;
+  display: block;
+  padding: 25px;
+}
+
+.Rating__title {
+  color: #4a4a4a;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.Rating__stars {
+  border: 0;
+  margin: 0 0 11px;
+  padding: 0;
+}
+
+.Rating__radio {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.Rating__label {
+  display: inline-block;
+  height: 25px;
+  padding: 0 0 0 33px;
+  position: relative;
+  width: 0;
+}
+
+.Rating__radio + .Rating__label::before {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.Rating__radio + .Rating__label::before {
+  content: url("star-inactive.svg");
+}
+
+.Rating__radio:hover + .Rating__label::before,
+.Rating__radio:checked + .Rating__label::before,
+.Rating__radio:focus + .Rating__label::before,
+.Rating__radio:checked:focus + .Rating__label::before {
+  content: url("star-active.svg");
+}
+
+.Rating__radio:hover + .Rating__label::before {
+  cursor: pointer;
+}
+
+.Rating__button {
+  background-color: #fff;
+  border: 1px solid #d2d0d2;
+  border-radius: 5px;
+  color: #4a4a4a;
+  cursor: pointer;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  padding: 4px 24px;
+}
+
+.Rating--confirmation .Rating__form {
+  display: block;
+  opacity: 0.4;
+}
+
+.Rating--confirmation .Rating__message {
+  background-color: #7ed321;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  padding: 15px;
+  text-align: center;
+}
