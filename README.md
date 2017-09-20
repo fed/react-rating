@@ -27,22 +27,15 @@ npm start
 
 Then open http://localhost:3000 in your browser.
 
-### Rating Component
-
-![Rating Component](https://i.imgur.com/BKjvmMx.jpg)
-
-API:
+### Rating Component API
 
 | Property | Type | Default | Description |
 |---|---|---|---|
-| `onSubmit` | function | Required | Expected signature: `({ rating: number }): void` |
+| `onSubmit` | function | Required | Pass in the function that will trigger when the rating form gets submitted. The function will receive the submitted rating as an argument. Expected signature: `({ rating: number }): void` |
 
 ### Average Component
 
-![Average Component](https://i.imgur.com/3RiSeQo.jpg)
-
-Here's the API:
-
 | Property | Type | Default | Description |
 |---|---|---|---|
-| `rating` | number | 0 |  |
+| `title` | string | "Average rating" | The text displayed next to the rating. |
+| `rating` | number | 0 | The number of highlighted stars. The value provided must be in the [0,5] range. When provided negative values, the component will default to 0. When a value greater than 5 is passed in, it will default to 5. |

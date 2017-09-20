@@ -14,6 +14,10 @@ export default function Styleguide() {
         <Average />
       </Preview>
 
+      <Preview title="Non-interactive Average rating component, custom title">
+        <Average title="Results" rating={2} />
+      </Preview>
+
       <Preview title="Non-interactive Average rating component, 3 stars">
         <Average rating={3} />
       </Preview>

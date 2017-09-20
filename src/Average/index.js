@@ -4,7 +4,7 @@ import activeStar from '../Rating/star-active.svg';
 import inactiveStar from '../Rating/star-inactive.svg';
 import './styles.css';
 
-export default function Average({ rating = 0 }) {
+export default function Average({ title = 'Average rating', rating = 0 }) {
   // `rating` must be an integer in the [0, 5] range.
   // Negative numbers default to 0.
   // Numbers greater than 5 default to 5.
@@ -31,7 +31,7 @@ export default function Average({ rating = 0 }) {
 
   return (
     <div className="Average">
-      <span className="Average__title">Average rating</span>
+      <span className="Average__title">{title}</span>
       <span role="img" className="Average__stars" title={`${_rating} stars out of 5`}>
         {stars}
       </span>
@@ -40,5 +40,6 @@ export default function Average({ rating = 0 }) {
 }
 
 Average.propTypes = {
-  stars: PropTypes.number
+  title: PropTypes.string,
+  rating: PropTypes.number
 };
