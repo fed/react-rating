@@ -1,0 +1,25 @@
+machine:
+  node:
+    version: 8.2.1
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+    SURGE_LOGIN: fknussel@gmail.com
+    SURGE_TOKEN: 2f062b26457e1edaf7d1e79797aafab6
+
+dependencies:
+  override:
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
+
+test:
+  override:
+    - yarn test
+
+deployment:
+  staging:
+    branch: master
+    commands:
+      - yarn build
+      - surge --project ./build --domain https://react-rating.surge.sh
+      - surge --project ./static --domain https://react-rating-static.surge.sh
