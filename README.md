@@ -1,53 +1,48 @@
 # Campaign Monitor UI Engineer Coding Test
 
-## Part 1: Static Markup & styles
+## Part 1: Static Version
+
+> Live demo: https://react-rating-static.surge.sh
 
 Check out the `./static` directory.
 
-Live demo: https://campaign-monitor-rating-static.surge.sh
+Some notes on the component:
 
-The component was built to be accessible and to fully work with a keyboard.
+* Built to be accessible and keyboard-navigable.
+* Pixel perfect replication of the design provided.
+* Tested on Chrome, Firefox, Safari Internet Explorer 11 and Edge.
 
-## Part 2: React Components
+## Part 2: Reusable React Component
 
 ### Demo & Examples
 
-Live demo: https://campaign-monitor-rating.surge.sh
+> Live demo: https://react-rating.surge.sh
 
 To build the examples locally, clone this repo then run:
 
-```js
+```
 npm install
 npm start
 ```
 
 Then open http://localhost:3000 in your browser.
 
-### Installation
+### Rating Component
 
-The easiest way to use the `Rating` and `Average` components is to install them from NPM and include them in your own React build process (using Webpack/Rollup/Browserify/etc).
+![Rating Component](https://i.imgur.com/BKjvmMx.jpg)
 
-```js
-npm install fknussel/react-rating
-```
-
-At this point you can import `react-rating` and its styles in your application as follows:
-
-```js
-import Rating, {Average} from 'react-rating';
-
-// Be sure to include styles at some point, probably during bootstrapping
-import 'react-rating/build/react-rating.css';
-```
-
-### Rating Component API
+API:
 
 | Property | Type | Default | Description |
-|:---|:---|:---|:---|
+|---|---|---|---|
 | `onSubmit` | function | Required | Expected signature: `({ rating: number }): void` |
 
-### Average Component API
+### Average Component
+
+![Average Component](https://i.imgur.com/3RiSeQo.jpg)
+
+Here's the API:
 
 | Property | Type | Default | Description |
-|:---|:---|:---|:---|
+|---|---|---|---|
 | `rating` | number | 0 |  |
