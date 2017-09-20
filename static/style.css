@@ -46,7 +46,7 @@
 
 .Rating__label {
   display: inline-block;
-  height: 25px;
+  height: 25px; /* height of each star */
   padding: 0 0 0 33px;
   position: relative;
   width: 0;
@@ -56,8 +56,7 @@
   left: 0;
   position: absolute;
   top: 0;
-  width: 28px;
-  /*height: 25px;*/
+  width: 28px; /* width of each star */
 }
 
 .Rating__radio + .Rating__label::before {
@@ -87,7 +86,7 @@
 }
 
 /*
- * Rating confirmation component
+ * Rating component, confirmation variant
  */
 
 .Rating--confirmation .Rating__form {
