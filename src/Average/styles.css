@@ -14,11 +14,16 @@
   margin-right: 10px;
 }
 
+/* @TODO: why do i need this? */
 .Average__stars {
   display: inherit;
 }
 
 .Average__star {
-  width: 21px;
   height: 20px;
+  width: 21px;
+}
+
+.Average__star:not(:last-of-type) {
+  margin-right: 7px;
 }
