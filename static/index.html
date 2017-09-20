@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rating Widget - Styleguide</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="styleguide.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- Component #1: Interactive version, rating view -->
+    <div class="sg-component-preview">
+      <div class="sg-component-header">
+        <span class="sg-component-description">Interactive version, rating view</span>
+      </div>
+
+      <div class="Rating">
+        <form class="Rating__form">
+          <div class="Rating__title">Rate this product</div>
+
+          <fieldset class="Rating__stars">
+            <input type="radio" name="stars" value="1" id="rating-stars-1" class="Rating__radio" />
+            <label class="Rating__label" for="rating-stars-1"></label>
+
+            <input type="radio" name="stars" value="2" id="rating-stars-2" class="Rating__radio" />
+            <label class="Rating__label" for="rating-stars-2"></label>
+
+            <input type="radio" name="stars" value="3" id="rating-stars-3" class="Rating__radio" />
+            <label class="Rating__label" for="rating-stars-3"></label>
+
+            <input type="radio" name="stars" value="4" id="rating-stars-4" class="Rating__radio" />
+            <label class="Rating__label" for="rating-stars-4"></label>
+
+            <input type="radio" name="stars" value="5" id="rating-stars-5" class="Rating__radio" />
+            <label class="Rating__label" for="rating-stars-5"></label>
+          </fieldset>
+
+          <button type="submit" class="Rating__button">Apply</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Component #2: Interactive version, confirmation view -->
+    <div class="sg-component-preview">
+      <div class="sg-component-header">
+        <span class="sg-component-description">Interactive version, confirmation view</span>
+      </div>
+
+      <div class="Rating Rating--confirmation">
+        <div class="Rating__message">
+          Thanks for your rating!
+        </div>
+
+        <form class="Rating__form">
+          <div class="Rating__title">Rate this product</div>
+
+          <fieldset class="Rating__stars">
+            <input type="radio" name="stars" value="1" id="alt-rating-stars-1" class="Rating__radio" checked />
+            <label class="Rating__label" for="alt-rating-stars-1"></label>
+
+            <input type="radio" name="stars" value="2" id="alt-rating-stars-2" class="Rating__radio" />
+            <label class="Rating__label" for="alt-rating-stars-2"></label>
+
+            <input type="radio" name="stars" value="3" id="alt-rating-stars-3" class="Rating__radio" />
+            <label class="Rating__label" for="alt-rating-stars-3"></label>
+
+            <input type="radio" name="stars" value="4" id="alt-rating-stars-4" class="Rating__radio" />
+            <label class="Rating__label" for="alt-rating-stars-4"></label>
+
+            <input type="radio" name="stars" value="5" id="alt-rating-stars-5" class="Rating__radio" />
+            <label class="Rating__label" for="alt-rating-stars-5"></label>
+          </fieldset>
+
+          <button type="submit" class="Rating__button">Apply</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Component #3: Non-interactive version -->
+    <div class="sg-component-preview">
+      <div class="sg-component-header">
+        <span class="sg-component-description">Non-interactive version</span>
+      </div>
+
+      <div class="Average">
+        <span class="Average__title">Average rating</span>
+        <img src="average.svg" alt="2 stars out of 5" />
+      </div>
+    </div>
+  </body>
+</html>
