@@ -16,7 +16,6 @@ Some notes on the component:
 * [Pixel perfect replication](https://i.imgur.com/NmoNOLx.png) of the design provided.
 * Tested on Chrome, Firefox, Safari, Internet Explorer 11 and Edge.
 
-
 ## Running the project
 
 To build the example locally, clone this repo and run:
@@ -34,26 +33,27 @@ Project will go live on http://localhost:3000.
 yarn test    // or `npm test`
 ```
 
-I've just written a bunch of tests to showcase different approaches to making sure the project works and to give an idea of how I'd go about testing the project: functional tests simulating events, mounting components to make sure they render without crashing, snapshot tests to make sure the output stays the same for the same set of props, tests to make sure the component's state is correct as the user interacts with the UI, mocking of external helper methods, etc. This project is not as battled tested as it should be to be shipped to production, though.
+I've just written a bunch of tests to showcase different approaches to making sure the project works and to give an idea of how I'd go about testing the project: functional tests simulating events, mounting components to make sure they render without crashing, snapshot tests to make sure the output stays the same for the same set of props, tests to make sure the component's state is correct as the user interacts with the UI, mocking external helper methods, etc. This project is not as battled tested as it should be to be shipped to production, though.
 
 ### Rating Component API
 
 | Property | Type | Default | Description |
 |---|---|---|---|
-| `title` | string | "Rate this product" | The text displayed next to the rating. |
-| `buttonText` | string | "Apply" | The text displayed next to the rating. |
-| `successMessage` | string | "Thanks for your rating!" | Pass in the function that will trigger when the rating form gets submitted. The function will receive the submitted rating as an argument. Expected signature: `({ rating: number }): void` |
+| `title` | string | "Rate this product" | Title of the widget. |
+| `buttonText` | string | "Apply" | Text displayed on the submit bottom. |
+| `successMessage` | string | "Thanks for your rating!" | Text displayed once the submit button is hit. |
+| `onSubmit` | function | Required | Pass in the function that will trigger when the rating form gets submitted. The function will receive the submitted rating as an argument. Expected signature: `({ rating: number }): void` |
 
-### Average Component
+### Average Component API
 
 | Property | Type | Default | Description |
 |---|---|---|---|
-| `title` | string | "Average rating" | The text displayed next to the rating. |
-| `rating` | number | 0 | The number of highlighted stars. The value provided must be in the [0,5] range. When provided negative values, the component will default to 0. When a value greater than 5 is passed in, it will default to 5. |
+| `title` | string | "Average rating" | Text displayed next to the rating. |
+| `rating` | number | 0 | Number of highlighted stars. The value provided must be in the [0,5] range. When provided negative values, the component will default to 0. When a value greater than 5 is passed in, it will default to 5. |
 
 ## Tech Stack
 
-* Using ES6 (arrow functions, destructuring, `Object.assign`, etc.). This gets transpiled to ES5 so the app should run just fine in older browsers.
+* Using ES6 (arrow functions, destructuring, `Array#fill`, etc.). This gets transpiled to ES5 so the app should run just fine in older browsers.
 * Using [Lodash](https://lodash.com/) to generate unique IDs.
 * Using [normalize.css](https://necolas.github.io/normalize.css/) so that all elements render consistently across browsers.
 * Using [classnames](https://github.com/JedWatson/classnames) for conditional class rendering.
