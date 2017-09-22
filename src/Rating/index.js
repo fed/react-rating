@@ -67,21 +67,30 @@ export default class Rating extends React.Component {
         {
           this.state.submitted && (
             <div className="Rating__message">
-              Thanks for your rating!
+              {this.props.successMessage}
             </div>
           )
         }
 
         <form className="Rating__form">
-          <div className="Rating__title">Rate this product</div>
+          <div className="Rating__title">{this.props.title}</div>
           <fieldset className="Rating__stars">{stars}</fieldset>
-          <button type="submit" className="Rating__button" onClick={this.handleSubmit}>Apply</button>
+        <button type="submit" className="Rating__button" onClick={this.handleSubmit}>{this.props.buttonText}</button>
         </form>
       </div>
     );
   }
 }
 
+Rating.defaultProps = {
+  title: 'Rate this product',
+  buttonText: 'Apply',
+  successMessage: 'Thanks for your rating!'
+};
+
 Rating.propTypes = {
+  title: PropTypes.string,
+  buttonText: PropTypes.string,
+  successMessage: PropTypes.string,
   onSubmit: PropTypes.func.isRequired
 }

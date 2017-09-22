@@ -41,7 +41,9 @@ I've just written a bunch of tests to showcase different approaches to making su
 
 | Property | Type | Default | Description |
 |---|---|---|---|
-| `onSubmit` | function | Required | Pass in the function that will trigger when the rating form gets submitted. The function will receive the submitted rating as an argument. Expected signature: `({ rating: number }): void` |
+| `title` | string | "Rate this product" | The text displayed next to the rating. |
+| `buttonText` | string | "Apply" | The text displayed next to the rating. |
+| `successMessage` | string | "Thanks for your rating!" | Pass in the function that will trigger when the rating form gets submitted. The function will receive the submitted rating as an argument. Expected signature: `({ rating: number }): void` |
 
 ### Average Component
 
