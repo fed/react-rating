@@ -1,6 +1,5 @@
 import React from 'react';
 import {mount, shallow} from 'enzyme';
-import renderer from 'react-test-renderer';
 import Average from '.';
 
 describe('Average component', () => {
