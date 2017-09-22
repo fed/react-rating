@@ -15,7 +15,9 @@ exports[`Rating component renders correctly 1`] = `
     <fieldset
       className="Rating__stars"
     >
-      <span>
+      <span
+        className="Rating__star"
+      >
         <input
           checked={false}
           className="Rating__radio"
@@ -30,7 +32,9 @@ exports[`Rating component renders correctly 1`] = `
           htmlFor="rating-some-random-id-stars-1"
         />
       </span>
-      <span>
+      <span
+        className="Rating__star"
+      >
         <input
           checked={false}
           className="Rating__radio"
@@ -45,7 +49,9 @@ exports[`Rating component renders correctly 1`] = `
           htmlFor="rating-some-random-id-stars-2"
         />
       </span>
-      <span>
+      <span
+        className="Rating__star"
+      >
         <input
           checked={false}
           className="Rating__radio"
@@ -60,7 +66,9 @@ exports[`Rating component renders correctly 1`] = `
           htmlFor="rating-some-random-id-stars-3"
         />
       </span>
-      <span>
+      <span
+        className="Rating__star"
+      >
         <input
           checked={false}
           className="Rating__radio"
@@ -75,7 +83,9 @@ exports[`Rating component renders correctly 1`] = `
           htmlFor="rating-some-random-id-stars-4"
         />
       </span>
-      <span>
+      <span
+        className="Rating__star"
+      >
         <input
           checked={false}
           className="Rating__radio"

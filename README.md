@@ -14,7 +14,7 @@ Some notes on the component:
 
 * Built to be accessible and keyboard-navigable.
 * [Pixel perfect replication](https://i.imgur.com/NmoNOLx.png) of the design provided.
-* Tested on Chrome, Firefox, Safari Internet Explorer 11 and Edge.
+* Tested on Chrome, Firefox, Safari, Internet Explorer 11 and Edge.
 
 
 ## Running the project
