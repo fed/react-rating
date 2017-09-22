@@ -12,11 +12,17 @@ Check out the `./static` directory.
 
 Check out the `./src` directory.
 
-Some notes on the component:
+There are only two components: `Rating` which is a stateful class component, and `Average` which is a stateless functional component.
+
+I've also provided a `Styleguide` and `Preview` components just to showcase the other two. Might as well have used [Styleguidist](https://github.com/styleguidist/react-styleguidist) or [Storybook](https://github.com/storybooks/storybook) but decided to keep it simple.
+
+Some notes on these components:
 
 * Built to be accessible and keyboard-navigable.
 * [Pixel perfect replication](https://i.imgur.com/NmoNOLx.png) of the design provided.
 * Tested on Chrome, Firefox, Safari, Internet Explorer 11 and Edge.
+
+To keep it simple I've just written vanilla CSS (no pre-processors such as Less/Sass, no post-processing plugins to allow variables or nesting selectors, no CSS modules, etc.). What we should probably do is to abstract out and reuse some recurring values such as background/border colours and the like. Also, I've used BEM to name my classes.
 
 ## Running the project
 
@@ -77,8 +83,8 @@ import Average from 'path/to/component';
 
 ## Tech Stack
 
-* Using ES6 (arrow functions, destructuring, `Array#fill`, etc.). This gets transpiled to ES5 so the app should run just fine in older browsers.
-* Using [Lodash](https://lodash.com/) to generate unique IDs.
+* Using ES6 (arrow functions, destructuring, `Array#fill`, etc.). This gets transpiled to ES5 so the app should run just fine in older browsers. Had to polyfill `Array#fill` though so that the app doesn't crash on IE.
+* Using [Lodash](https://lodash.com/) to generate unique IDs (i'm only importing this single module, no need to bundle the whole library).
 * Using [normalize.css](https://necolas.github.io/normalize.css/) so that all elements render consistently across browsers.
 * Using [classnames](https://github.com/JedWatson/classnames) for conditional class rendering.
 * Tests were written using [Jest](https://facebook.github.io/jest/) and [Enzyme](https://github.com/airbnb/enzyme).

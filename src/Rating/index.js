@@ -9,6 +9,8 @@ export default class Rating extends React.Component {
     super();
 
     this.state = {
+      // We generate a unique random ID so that we can have multiple
+      // instances of the component on the same page.
       id: uniqueId('rating-'),
       rating: 0,
       submitted: false
@@ -35,14 +37,17 @@ export default class Rating extends React.Component {
   }
 
   render() {
+    const {id, rating, submitted} = this.state;
+    const {title, buttonText, successMessage} = this.props;
     const className = classnames('Rating', {
-      'Rating--confirmation': this.state.submitted
+      'Rating--confirmation': submitted
     });
 
     const stars = Array(5)
       .fill(0)
       .map((el, index) => {
         const value = index + 1;
+        const name = `${id}-stars-${value}`;
 
         return (
           <span key={value} className="Rating__star">
@@ -50,14 +55,14 @@ export default class Rating extends React.Component {
               type="radio"
               name="stars"
               value={value}
-              id={`${this.state.id}-stars-${value}`}
+              id={name}
               className="Rating__radio"
               onChange={this.handleChange}
-              checked={this.state.rating === value} />
+              checked={rating === value} />
 
             <label
               className="Rating__label"
-              htmlFor={`${this.state.id}-stars-${value}`} />
+              htmlFor={name} />
           </span>
         );
       });
@@ -65,18 +70,18 @@ export default class Rating extends React.Component {
     return (
       <div className={className}>
         {
-          this.state.submitted && (
+          submitted && (
             <div className="Rating__message">
-              {this.props.successMessage}
+              {successMessage}
             </div>
           )
         }
 
         <form className="Rating__form">
-          <div className="Rating__title">{this.props.title}</div>
+          <div className="Rating__title">{title}</div>
           <fieldset className="Rating__stars">{stars}</fieldset>
           <button type="submit" className="Rating__button" onClick={this.handleSubmit}>
-            {this.props.buttonText}
+            {buttonText}
           </button>
         </form>
       </div>

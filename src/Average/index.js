@@ -6,8 +6,7 @@ import './styles.css';
 
 export default function Average({ title = 'Average rating', rating = 0 }) {
   // `rating` must be an integer in the [0, 5] range.
-  // Negative numbers default to 0.
-  // Numbers greater than 5 default to 5.
+  // Negative numbers default to 0. Numbers greater than 5 default to 5.
   let _rating;
 
   if (rating >= 0 && rating <= 5) {
@@ -18,6 +17,7 @@ export default function Average({ title = 'Average rating', rating = 0 }) {
     _rating = 5;
   }
 
+  const blurb = `${_rating} stars out of 5`;
   const stars = Array(5)
     .fill(0)
     .map((el, index) => {
@@ -32,7 +32,7 @@ export default function Average({ title = 'Average rating', rating = 0 }) {
   return (
     <div className="Average">
       <span className="Average__title">{title}</span>
-      <span role="img" className="Average__stars" title={`${_rating} stars out of 5`}>
+      <span className="Average__stars" title={blurb} aria-label={blurb}>
         {stars}
       </span>
     </div>
