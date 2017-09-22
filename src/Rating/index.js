@@ -75,7 +75,9 @@ export default class Rating extends React.Component {
         <form className="Rating__form">
           <div className="Rating__title">{this.props.title}</div>
           <fieldset className="Rating__stars">{stars}</fieldset>
-        <button type="submit" className="Rating__button" onClick={this.handleSubmit}>{this.props.buttonText}</button>
+          <button type="submit" className="Rating__button" onClick={this.handleSubmit}>
+            {this.props.buttonText}
+          </button>
         </form>
       </div>
     );

@@ -4,6 +4,10 @@ import {mount, shallow} from 'enzyme';
 import Rating from '.';
 import noop from 'lodash/noop';
 
+// We need to mock Lodash's uniqueId generator so that we can generate
+// a valid snapshot and query the component.
+jest.mock('lodash/uniqueId', () => jest.fn(() => 'rating-some-random-id'));
+
 describe('Rating component', () => {
   it('renders without crashing', () => {
     mount(<Rating onSubmit={noop} />);
@@ -22,6 +26,24 @@ describe('Rating component', () => {
 
     expect(wrapper.state('rating')).toEqual(0);
     expect(wrapper.state('submitted')).toEqual(false);
+  });
+
+  it('renders the customised title, button text and success message if provided', () => {
+    const wrapper = shallow(
+      <Rating
+        title="Rate us!"
+        buttonText="Cast my vote"
+        successMessage="Thanks for that"
+        onSubmit={noop} />
+    );
+    const button = wrapper.find('.Rating__button');
+
+    expect(wrapper.find('.Rating__title').text()).toEqual('Rate us!');
+    expect(button.text()).toEqual('Cast my vote');
+
+    // Now submit the form so that we can query the success message.
+    button.simulate('click', { preventDefault() {} });
+    expect(wrapper.find('.Rating__message').text()).toEqual('Thanks for that');
   });
 
   it('updates the internal state after selecting a rating', () => {
@@ -52,7 +74,7 @@ describe('Rating component', () => {
   it('calls the onSubmit function with the correct value', () => {
     const spy = jest.fn();
     const wrapper = shallow(<Rating onSubmit={spy} />);
-    const star = wrapper.find('#rating-stars-4');
+    const star = wrapper.find('#rating-some-random-id-stars-4');
     const input = wrapper.find('.Rating__button');
 
     // Click submit without changing anything and

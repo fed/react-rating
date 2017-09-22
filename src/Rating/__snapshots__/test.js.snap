@@ -19,7 +19,7 @@ exports[`Rating component renders correctly 1`] = `
         <input
           checked={false}
           className="Rating__radio"
-          id="rating-stars-1"
+          id="rating-some-random-id-stars-1"
           name="stars"
           onChange={[Function]}
           type="radio"
@@ -27,14 +27,14 @@ exports[`Rating component renders correctly 1`] = `
         />
         <label
           className="Rating__label"
-          htmlFor="rating-stars-1"
+          htmlFor="rating-some-random-id-stars-1"
         />
       </span>
       <span>
         <input
           checked={false}
           className="Rating__radio"
-          id="rating-stars-2"
+          id="rating-some-random-id-stars-2"
           name="stars"
           onChange={[Function]}
           type="radio"
@@ -42,14 +42,14 @@ exports[`Rating component renders correctly 1`] = `
         />
         <label
           className="Rating__label"
-          htmlFor="rating-stars-2"
+          htmlFor="rating-some-random-id-stars-2"
         />
       </span>
       <span>
         <input
           checked={false}
           className="Rating__radio"
-          id="rating-stars-3"
+          id="rating-some-random-id-stars-3"
           name="stars"
           onChange={[Function]}
           type="radio"
@@ -57,14 +57,14 @@ exports[`Rating component renders correctly 1`] = `
         />
         <label
           className="Rating__label"
-          htmlFor="rating-stars-3"
+          htmlFor="rating-some-random-id-stars-3"
         />
       </span>
       <span>
         <input
           checked={false}
           className="Rating__radio"
-          id="rating-stars-4"
+          id="rating-some-random-id-stars-4"
           name="stars"
           onChange={[Function]}
           type="radio"
@@ -72,14 +72,14 @@ exports[`Rating component renders correctly 1`] = `
         />
         <label
           className="Rating__label"
-          htmlFor="rating-stars-4"
+          htmlFor="rating-some-random-id-stars-4"
         />
       </span>
       <span>
         <input
           checked={false}
           className="Rating__radio"
-          id="rating-stars-5"
+          id="rating-some-random-id-stars-5"
           name="stars"
           onChange={[Function]}
           type="radio"
@@ -87,7 +87,7 @@ exports[`Rating component renders correctly 1`] = `
         />
         <label
           className="Rating__label"
-          htmlFor="rating-stars-5"
+          htmlFor="rating-some-random-id-stars-5"
         />
       </span>
     </fieldset>
