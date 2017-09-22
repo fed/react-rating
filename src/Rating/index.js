@@ -45,7 +45,7 @@ export default class Rating extends React.Component {
         const value = index + 1;
 
         return (
-          <span key={value}>
+          <span key={value} className="Rating__star">
             <input
               type="radio"
               name="stars"

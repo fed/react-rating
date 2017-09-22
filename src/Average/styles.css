@@ -14,9 +14,8 @@
   margin-right: 10px;
 }
 
-/* @TODO: why do i need this? */
 .Average__stars {
-  display: inherit;
+  display: inherit; /* @TODO: why do i need this? */
 }
 
 .Average__star {
