@@ -10,6 +10,8 @@ Check out the `./static` directory.
 
 > Live demo: https://react-rating.surge.sh
 
+Check out the `./src` directory.
+
 Some notes on the component:
 
 * Built to be accessible and keyboard-navigable.
@@ -44,12 +46,34 @@ I've just written a bunch of tests to showcase different approaches to making su
 | `successMessage` | string | "Thanks for your rating!" | Text displayed once the submit button is hit. |
 | `onSubmit` | function | Required | Pass in the function that will trigger when the rating form gets submitted. The function will receive the submitted rating as an argument. Expected signature: `({ rating: number }): void` |
 
+Example:
+
+```js
+import Rating from 'path/to/component';
+
+<Rating
+  title="Rate Us" // optional
+  buttonText="Cast your vote" // optional
+  successMessage="Thanks!" // optional
+  onSubmit={(rating) => console.info(`Submitted with rating: ${rating}`)} />
+```
+
 ### Average Component API
 
 | Property | Type | Default | Description |
 |---|---|---|---|
 | `title` | string | "Average rating" | Text displayed next to the rating. |
 | `rating` | number | 0 | Number of highlighted stars. The value provided must be in the [0,5] range. When provided negative values, the component will default to 0. When a value greater than 5 is passed in, it will default to 5. |
+
+Example:
+
+```js
+import Average from 'path/to/component';
+
+<Average
+  title="Results" // optional
+  rating={2} />
+```
 
 ## Tech Stack
 
