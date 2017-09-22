@@ -9,6 +9,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "array.prototype.fill": "^1.0.2",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
