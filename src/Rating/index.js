@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import uniqueId from 'lodash/uniqueId';
 import './styles.css';
 
 export default class Rating extends React.Component {
@@ -8,6 +9,7 @@ export default class Rating extends React.Component {
     super();
 
     this.state = {
+      id: uniqueId('rating-'),
       rating: 0,
       submitted: false
     };
@@ -48,14 +50,14 @@ export default class Rating extends React.Component {
               type="radio"
               name="stars"
               value={value}
-              id={`rating-stars-${value}`}
+              id={`${this.state.id}-stars-${value}`}
               className="Rating__radio"
               onChange={this.handleChange}
               checked={this.state.rating === value} />
 
             <label
               className="Rating__label"
-              htmlFor={`rating-stars-${value}`} />
+              htmlFor={`${this.state.id}-stars-${value}`} />
           </span>
         );
       });
