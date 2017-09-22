@@ -89,6 +89,19 @@
   padding: 4px 23px;
 }
 
+/*
+ * Once the form is submitted, the user should
+ * no longer be able to interact with the it.
+ */
+.Rating__radio:hover:disabled + .Rating__label::before,
+.Rating__button:disabled {
+  cursor: default;
+}
+
+.Rating__radio:not(:checked):disabled + .Rating__label::before {
+  content: url("star-inactive.svg");
+}
+
 .Rating--confirmation .Rating__form {
   display: block;
   opacity: 0.4;

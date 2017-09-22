@@ -58,7 +58,8 @@ export default class Rating extends React.Component {
               id={name}
               className="Rating__radio"
               onChange={this.handleChange}
-              checked={rating === value} />
+              checked={rating === value}
+              disabled={submitted} />
 
             <label
               className="Rating__label"
@@ -80,8 +81,12 @@ export default class Rating extends React.Component {
         <form className="Rating__form">
           <div className="Rating__title">{title}</div>
           <fieldset className="Rating__stars">{stars}</fieldset>
-          <button type="submit" className="Rating__button" onClick={this.handleSubmit}>
-            {buttonText}
+          <button
+            type="submit"
+            className="Rating__button"
+            disabled={submitted}
+            onClick={this.handleSubmit}>
+              {buttonText}
           </button>
         </form>
       </div>
