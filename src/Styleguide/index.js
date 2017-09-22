@@ -10,7 +10,7 @@ export default function Styleguide() {
         <Rating onSubmit={(rating) => console.info(`Submitted with rating: ${rating}`)} />
       </Preview>
 
-      <Preview title="Interactive rating component">
+      <Preview title="Interactive rating component with custom messages">
         <Rating
           title="Rate Us"
           buttonText="Cast your vote"
