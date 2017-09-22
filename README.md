@@ -18,14 +18,24 @@ Some notes on the component:
 
 > Live demo: https://react-rating.surge.sh
 
-To build the examples locally, clone this repo then run:
+## Running the project
+
+To build the example locally, clone this repo and run:
 
 ```
-npm install
-npm start
+yarn install // or `npm install`
+yarn start   // or `npm start`
 ```
 
-Then open http://localhost:3000 in your browser.
+Project will go live on http://localhost:3000.
+
+## Running the test suite
+
+```
+yarn test    // or `npm test`
+```
+
+I've just written a bunch of tests to showcase different approaches to making sure the project works and to give an idea of how I'd go about testing the project: functional tests simulating events, mounting components to make sure they render without crashing, snapshot tests to make sure the output stays the same for the same set of props, some basic unit tests for helper functions, tests to make sure the component's state is correct as the user interacts with the UI, etc. This project is not as battled tested as it should be to be shipped to production, though.
 
 ### Rating Component API
 
