@@ -16,95 +16,100 @@ exports[`Rating component renders correctly 1`] = `
       className="Rating__stars"
     >
       <span
-        className="Rating__star"
+        className="Star"
       >
         <input
           checked={false}
-          className="Rating__radio"
+          className="Star__radio"
+          disabled={false}
           id="rating-some-random-id-stars-1"
-          name="stars"
+          name="stars-rating-some-random-id"
           onChange={[Function]}
           type="radio"
           value={1}
         />
         <label
-          className="Rating__label"
+          className="Star__label"
           htmlFor="rating-some-random-id-stars-1"
         />
       </span>
       <span
-        className="Rating__star"
+        className="Star"
       >
         <input
           checked={false}
-          className="Rating__radio"
+          className="Star__radio"
+          disabled={false}
           id="rating-some-random-id-stars-2"
-          name="stars"
+          name="stars-rating-some-random-id"
           onChange={[Function]}
           type="radio"
           value={2}
         />
         <label
-          className="Rating__label"
+          className="Star__label"
           htmlFor="rating-some-random-id-stars-2"
         />
       </span>
       <span
-        className="Rating__star"
+        className="Star"
       >
         <input
           checked={false}
-          className="Rating__radio"
+          className="Star__radio"
+          disabled={false}
           id="rating-some-random-id-stars-3"
-          name="stars"
+          name="stars-rating-some-random-id"
           onChange={[Function]}
           type="radio"
           value={3}
         />
         <label
-          className="Rating__label"
+          className="Star__label"
           htmlFor="rating-some-random-id-stars-3"
         />
       </span>
       <span
-        className="Rating__star"
+        className="Star"
       >
         <input
           checked={false}
-          className="Rating__radio"
+          className="Star__radio"
+          disabled={false}
           id="rating-some-random-id-stars-4"
-          name="stars"
+          name="stars-rating-some-random-id"
           onChange={[Function]}
           type="radio"
           value={4}
         />
         <label
-          className="Rating__label"
+          className="Star__label"
           htmlFor="rating-some-random-id-stars-4"
         />
       </span>
       <span
-        className="Rating__star"
+        className="Star"
       >
         <input
           checked={false}
-          className="Rating__radio"
+          className="Star__radio"
+          disabled={false}
           id="rating-some-random-id-stars-5"
-          name="stars"
+          name="stars-rating-some-random-id"
           onChange={[Function]}
           type="radio"
           value={5}
         />
         <label
-          className="Rating__label"
+          className="Star__label"
           htmlFor="rating-some-random-id-stars-5"
         />
       </span>
     </fieldset>
     <button
       className="Rating__button"
+      disabled={false}
       onClick={[Function]}
-      type="submit"
     >
       Apply
     </button>

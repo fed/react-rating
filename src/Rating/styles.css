@@ -29,55 +29,6 @@
   padding: 0;
 }
 
-.Rating__star {
-  display: inline-block;
-}
-
-.Rating__star:not(:last-child) {
-  margin-right: 9px;
-}
-
-.Rating__radio {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.Rating__label {
-  display: inline-block;
-  height: 25px;
-  padding: 0 0 0 28px;
-  position: relative;
-  width: 0;
-}
-
-.Rating__radio + .Rating__label::before {
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 28px;
-}
-
-.Rating__radio + .Rating__label::before {
-  content: url("star-inactive.svg");
-}
-
-.Rating__radio:hover + .Rating__label::before,
-.Rating__radio:checked + .Rating__label::before,
-.Rating__radio:focus + .Rating__label::before,
-.Rating__radio:checked:focus + .Rating__label::before {
-  content: url("star-active.svg");
-}
-
-.Rating__radio:hover + .Rating__label::before {
-  cursor: pointer;
-}
-
 .Rating__button {
   background-color: #fff;
   border: 1px solid #d2d0d2;
@@ -87,19 +38,6 @@
   font-family: "Helvetica Neue", sans-serif;
   font-size: 14px;
   padding: 4px 23px;
-}
-
-/*
- * Once the form is submitted, the user should
- * no longer be able to interact with the it.
- */
-.Rating__radio:hover:disabled + .Rating__label::before,
-.Rating__button:disabled {
-  cursor: default;
-}
-
-.Rating__radio:not(:checked):disabled + .Rating__label::before {
-  content: url("star-inactive.svg");
 }
 
 .Rating--confirmation .Rating__form {

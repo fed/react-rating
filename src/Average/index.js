@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import activeStar from '../Rating/star-active.svg';
-import inactiveStar from '../Rating/star-inactive.svg';
+import activeStar from '../Stars/star-active.svg';
+import inactiveStar from '../Stars/star-inactive.svg';
 import './styles.css';
 
 export default function Average({ title = 'Average rating', rating = 0 }) {

@@ -47,19 +47,19 @@ describe('Rating component', () => {
   });
 
   it('updates the internal state after selecting a rating', () => {
-    const wrapper = shallow(<Rating onSubmit={noop} />);
-    const star = wrapper.find('.Rating__radio');
+    const wrapper = mount(<Rating onSubmit={noop} />);
+    const stars = wrapper.find('.Star__radio');
     const input = wrapper.find('.Rating__button');
 
     // First click on the first star and expect the rating to be 1.
-    star.first().simulate('change', { target: { value: 1 } });
+    stars.first().simulate('change', { target: { value: 1 } });
 
     expect(wrapper.state('rating')).toEqual(1);
     expect(wrapper.state('submitted')).toEqual(false);
 
     // Then click on the fourth star (the one at index 3)
     // and expect the rating to be 4.
-    star.at(3).simulate('change', { target: { value: 4 } });
+    stars.at(3).simulate('change', { target: { value: 4 } });
 
     expect(wrapper.state('rating')).toEqual(4);
     expect(wrapper.state('submitted')).toEqual(false);
@@ -71,10 +71,9 @@ describe('Rating component', () => {
     expect(wrapper.state('submitted')).toEqual(true);
   });
 
-  it('calls the onSubmit function with the correct value', () => {
+  it('calls the onSubmit function with the correct default value', () => {
     const spy = jest.fn();
     const wrapper = shallow(<Rating onSubmit={spy} />);
-    const star = wrapper.find('#rating-some-random-id-stars-4');
     const input = wrapper.find('.Rating__button');
 
     // Click submit without changing anything and
@@ -82,13 +81,34 @@ describe('Rating component', () => {
     input.simulate('click', { preventDefault() {} });
 
     expect(spy).toHaveBeenLastCalledWith(0);
+  });
+
+  it('calls the onSubmit function with the correct value', () => {
+    const spy = jest.fn();
+    const wrapper = mount(<Rating onSubmit={spy} />);
+    const star = wrapper.find('#rating-some-random-id-stars-4');
+    const input = wrapper.find('.Rating__button');
 
     // Now click on the fourth star and expect the callback
     // to be called with rating=4.
     star.simulate('change', { target: { value: 4 } });
     input.simulate('click', { preventDefault() {} });
 
-    expect(spy).toHaveBeenCalledTimes(2);
+    expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenLastCalledWith(4);
+  });
+
+  it('allows no further interaction once the form is submitted', () => {
+    const wrapper = mount(<Rating onSubmit={noop} />);
+    const stars = wrapper.find('.Star__radio');
+    const input = wrapper.find('.Rating__button');
+
+    // Select any random value and submit the form.
+    // Then try to select any other rating. The internal state should not change.
+    stars.at(2).simulate('change', { target: { value: 3 } });
+    input.simulate('click', { preventDefault() {} });
+    stars.at(4).simulate('change', { target: { value: 5 } });
+
+    expect(wrapper.state('rating')).toEqual(3);
   });
 });

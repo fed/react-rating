@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Stars from '../Stars';
 import classnames from 'classnames';
-import uniqueId from 'lodash/uniqueId';
 import './styles.css';
 
 export default class Rating extends React.Component {
@@ -9,9 +9,6 @@ export default class Rating extends React.Component {
     super();
 
     this.state = {
-      // We generate a unique random ID so that we can have multiple
-      // instances of the component on the same page.
-      id: uniqueId('rating-'),
       rating: 0,
       submitted: false
     };
@@ -21,7 +18,9 @@ export default class Rating extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({
+    // Once the form was submitted, we don't allow any
+    // further interaction with the component.
+    !this.state.submitted && this.setState({
       rating: Number(event.target.value)
     });
   }
@@ -37,40 +36,16 @@ export default class Rating extends React.Component {
   }
 
   render() {
-    const {id, rating, submitted} = this.state;
+    const {rating, submitted} = this.state;
     const {title, buttonText, successMessage} = this.props;
     const className = classnames('Rating', {
       'Rating--confirmation': submitted
     });
 
-    const stars = Array(5)
-      .fill(0)
-      .map((el, index) => {
-        const value = index + 1;
-        const name = `${id}-stars-${value}`;
-
-        return (
-          <span key={value} className="Rating__star">
-            <input
-              type="radio"
-              name="stars"
-              value={value}
-              id={name}
-              className="Rating__radio"
-              onChange={this.handleChange}
-              checked={rating === value}
-              disabled={submitted} />
-
-            <label
-              className="Rating__label"
-              htmlFor={name} />
-          </span>
-        );
-      });
-
     return (
       <div className={className}>
         {
+          // Display a confirmation message only if the form was submitted.
           submitted && (
             <div className="Rating__message">
               {successMessage}
@@ -80,13 +55,15 @@ export default class Rating extends React.Component {
 
         <form className="Rating__form">
           <div className="Rating__title">{title}</div>
-          <fieldset className="Rating__stars">{stars}</fieldset>
-          <button
-            type="submit"
-            className="Rating__button"
+
+          <Stars
+            className="Rating__stars"
+            selected={rating}
             disabled={submitted}
-            onClick={this.handleSubmit}>
-              {buttonText}
+            onChange={this.handleChange} />
+
+          <button className="Rating__button" disabled={submitted} onClick={this.handleSubmit}>
+            {buttonText}
           </button>
         </form>
       </div>

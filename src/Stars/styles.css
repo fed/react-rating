@@ -1,0 +1,61 @@
+.Star {
+  display: inline-block;
+}
+
+.Star:not(:last-child) {
+  margin-right: 9px;
+}
+
+.Star__radio {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.Star__label {
+  display: inline-block;
+  height: 25px;
+  padding: 0 0 0 28px;
+  position: relative;
+  width: 0;
+}
+
+.Star__radio + .Star__label::before {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.Star__radio + .Star__label::before {
+  content: url("star-inactive.svg");
+}
+
+.Star__radio:hover + .Star__label::before,
+.Star__radio:checked + .Star__label::before,
+.Star__radio:focus + .Star__label::before,
+.Star__radio:checked:focus + .Star__label::before {
+  content: url("star-active.svg");
+}
+
+.Star__radio:hover + .Star__label::before {
+  cursor: pointer;
+}
+
+/*
+ * Once the form is submitted, the user should
+ * no longer be able to interact with the it.
+ */
+.Star__radio:hover:disabled + .Star__label::before,
+.Star__button:disabled {
+  cursor: default;
+}
+
+.Star__radio:not(:checked):disabled + .Star__label::before {
+  content: url("star-inactive.svg");
+}
