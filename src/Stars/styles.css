@@ -59,3 +59,7 @@
 .Star__radio:not(:checked):disabled + .Star__label::before {
   content: url("star-inactive.svg");
 }
+
+.Star--active .Star__label::before {
+  content: url("star-active.svg");
+}
