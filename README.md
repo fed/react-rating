@@ -10,9 +10,9 @@ Check out the `./static` directory.
 
 > Live demo: https://react-rating.surge.sh
 
-Check out the `./src` directory and look for the `components/{Rating, Average, Stars}` folders.
+Check out the `./src` directory and look for the `{Rating, Average, Stars}` folders.
 
-`Rating` is a stateful class component, and `Average` is a stateless functional component. The rating component depends on a third stateless functional component called `Stars` which is responsible of rendering the clickable stars.
+`Rating` is a stateful class component, and `Average` is a stateless functional component. The rating component depends on a third stateless functional component called `Stars` which is only responsible for rendering the clickable stars.
 
 Some notes on these components:
 
@@ -20,7 +20,7 @@ Some notes on these components:
 * [Pixel perfect replication](https://i.imgur.com/NmoNOLx.png) of the design provided.
 * **Browser support:** Tested on Chrome, Firefox, Safari, Internet Explorer 11 and Edge.
 * **Tests**: I've written a bunch of tests to showcase different approaches to making sure the project works and to give an idea of how I'd go about testing the project: functional tests simulating events, mounting components to make sure they render without crashing, snapshot tests to make sure the output stays the same for the same set of props, tests to make sure the component's state is correct as the user interacts with the UI, mocking external helper methods, etc. This project is not as battled tested as it should be to be shipped to production, though.
-* **Styles:** to keep it simple I've just written vanilla CSS (no pre-processors such as Less/Sass, no post-processing plugins to allow variables or nesting selectors, no CSS modules, etc.). What we should probably do is to abstract out and reuse some recurring values such as background/border colours and the like. Also, I've used BEM to name my classes.
+* **Styles:** To keep it simple I've just written vanilla CSS (no pre-processors such as Less/Sass, no post-processing plugins to allow variables or nesting selectors, no CSS modules, etc.). What we should probably do is to abstract out and reuse some recurring values such as background/border colours and the like. Also, I've used BEM to name my classes.
 
 Finally, I've also provided a `Styleguide` and `Preview` components just to showcase the other two. Might as well have used [Styleguidist](https://github.com/styleguidist/react-styleguidist) or [Storybook](https://github.com/storybooks/storybook) but decided to keep it simple.
 
