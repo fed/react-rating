@@ -37,7 +37,7 @@
 }
 
 .Star--active .Star__label::before,
-.Star__radio:not(:disabled):hover + .Star__label::before,
+.Star__radio:enabled:hover + .Star__label::before,
 .Star__radio:checked + .Star__label::before,
 .Star__radio:focus + .Star__label::before,
 .Star__radio:checked:focus + .Star__label::before {
