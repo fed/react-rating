@@ -9,7 +9,13 @@ export default class Stars extends React.Component {
     super();
 
     this.state = {
-      hover: null
+      // We keep track of which element has been hovered so that
+      // we can highlight all previous stars too.
+      hovered: null,
+
+      // Generate a unique random ID so that we can have multiple
+      // instances of the component on the same page.
+      id: uniqueId('rating-')
     };
 
     this.handleMouseOver = this.handleMouseOver.bind(this);
@@ -17,26 +23,22 @@ export default class Stars extends React.Component {
   }
 
   handleMouseOver(event) {
-    this.setState({
-      hover: event.target.dataset.star
+    // Once the form is submitted, the form should be disabled so that
+    // the user is no longer to interact with the it.
+    !this.props.disabled && this.setState({
+      hovered: event.target.dataset.star
     });
   }
 
   handleMouseLeave() {
-    this.setState({
-      hover: null
+    !this.props.disabled && this.setState({
+      hovered: null
     });
   }
 
   render() {
     const {className, total, selected, disabled, onChange} = this.props;
-
-    // We generate a unique random ID so that we can have multiple
-    // instances of the component on the same page.
-    const id = uniqueId('rating-');
-
-    //
-    const composedClassName = classnames('Stars', className);
+    const {id, hovered} = this.state;
 
     const stars = Array(total)
       .fill(0)
@@ -44,7 +46,7 @@ export default class Stars extends React.Component {
         const value = index + 1;
         const name = `${id}-stars-${value}`;
         const starClassName = classnames('Star', {
-          'Star--active': value < this.state.hover
+          'Star--active': value < selected || value < hovered
         });
 
         return (
@@ -70,7 +72,7 @@ export default class Stars extends React.Component {
       });
 
     return (
-      <fieldset className={composedClassName}>
+      <fieldset className={className}>
         {stars}
       </fieldset>
     );
@@ -78,14 +80,13 @@ export default class Stars extends React.Component {
 }
 
 Stars.defaultProps = {
-  total: 5,
-  disabled: false,
-  className: ''
+  className: '',
+  disabled: false
 };
 
 Stars.propTypes = {
   className: PropTypes.string,
-  total: PropTypes.number,
+  total: PropTypes.number.isRequired,
   selected: PropTypes.number,
   disabled: PropTypes.bool,
   onChange: PropTypes.func.isRequired
