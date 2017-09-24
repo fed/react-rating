@@ -41,7 +41,7 @@ export default class Stars extends React.Component {
     const {id, hovered} = this.state;
 
     // If passed in an invalid number of stars to render such as a
-    // negative or non-integer value, default to `5`.
+    // negative or non-integer value, fallback to `5`.
     const numberOfStars = Number.isInteger(total) && total > 0 ? total : 5;
     const stars = Array(numberOfStars)
       .fill(0)
