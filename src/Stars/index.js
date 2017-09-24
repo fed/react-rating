@@ -40,7 +40,10 @@ export default class Stars extends React.Component {
     const {className, total, selected, disabled, onChange} = this.props;
     const {id, hovered} = this.state;
 
-    const stars = Array(total)
+    // If passed in an invalid number of stars to render such as a
+    // negative or non-integer value, default to `5`.
+    const numberOfStars = Number.isInteger(total) && total > 0 ? total : 5;
+    const stars = Array(numberOfStars)
       .fill(0)
       .map((el, index) => {
         const value = index + 1;
