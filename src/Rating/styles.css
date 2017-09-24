@@ -40,6 +40,10 @@
   padding: 4px 23px;
 }
 
+.Rating__button:disabled {
+  cursor: default;
+}
+
 .Rating--confirmation .Rating__form {
   display: block;
   opacity: 0.4;

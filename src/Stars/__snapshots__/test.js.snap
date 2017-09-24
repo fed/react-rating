@@ -19,7 +19,10 @@ exports[`Stars component renders correctly with the default values 1`] = `
     />
     <label
       className="Star__label"
+      data-star={1}
       htmlFor="rating-some-random-id-stars-1"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
     />
   </span>
   <span
@@ -37,7 +40,10 @@ exports[`Stars component renders correctly with the default values 1`] = `
     />
     <label
       className="Star__label"
+      data-star={2}
       htmlFor="rating-some-random-id-stars-2"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
     />
   </span>
   <span
@@ -55,7 +61,10 @@ exports[`Stars component renders correctly with the default values 1`] = `
     />
     <label
       className="Star__label"
+      data-star={3}
       htmlFor="rating-some-random-id-stars-3"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
     />
   </span>
   <span
@@ -73,7 +82,10 @@ exports[`Stars component renders correctly with the default values 1`] = `
     />
     <label
       className="Star__label"
+      data-star={4}
       htmlFor="rating-some-random-id-stars-4"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
     />
   </span>
   <span
@@ -91,7 +103,10 @@ exports[`Stars component renders correctly with the default values 1`] = `
     />
     <label
       className="Star__label"
+      data-star={5}
       htmlFor="rating-some-random-id-stars-5"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
     />
   </span>
 </fieldset>

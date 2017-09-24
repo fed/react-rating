@@ -12,7 +12,7 @@ Check out the `./static` directory.
 
 Check out the `./src` directory and look for the `{Rating, Average, Stars}` folders.
 
-`Rating` is a stateful class component, and `Average` is a stateless functional component. The rating component depends on a third stateless functional component called `Stars` which is only responsible for rendering the clickable stars.
+`Rating` is a stateful class component, and `Average` is a stateless functional component. The rating component depends on a third stateful component called `Stars` which is only responsible for rendering the clickable stars.
 
 Some notes on these components:
 
@@ -45,6 +45,7 @@ yarn test    // or `npm test`
 
 | Property | Type | Default | Description |
 |---|---|---|---|
+| `total` | number | 5 | Number of stars to display. |
 | `title` | string | "Rate this product" | Title of the widget. |
 | `buttonText` | string | "Apply" | Text displayed on the submit bottom. |
 | `successMessage` | string | "Thanks for your rating!" | Text displayed once the submit button is hit. |
@@ -56,6 +57,7 @@ Example:
 import Rating from 'path/to/component';
 
 <Rating
+  total={10} // optional
   title="Rate Us" // optional
   buttonText="Cast your vote" // optional
   successMessage="Thanks!" // optional

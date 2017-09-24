@@ -10,12 +10,12 @@ jest.mock('lodash/uniqueId', () => jest.fn(() => 'rating-some-random-id'));
 
 describe('Stars component', () => {
   it('renders without crashing', () => {
-    mount(<Stars onChange={noop} />);
+    mount(<Stars total={5} onChange={noop} />);
   });
 
   it('renders correctly with the default values', () => {
     const tree = renderer.create(
-      <Stars onChange={noop} />
+      <Stars total={5} onChange={noop} />
     ).toJSON();
 
     expect(tree).toMatchSnapshot();

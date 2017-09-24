@@ -37,7 +37,7 @@ export default class Rating extends React.Component {
 
   render() {
     const {rating, submitted} = this.state;
-    const {title, buttonText, successMessage} = this.props;
+    const {total, title, buttonText, successMessage} = this.props;
     const className = classnames('Rating', {
       'Rating--confirmation': submitted
     });
@@ -58,6 +58,7 @@ export default class Rating extends React.Component {
 
           <Stars
             className="Rating__stars"
+            total={total}
             selected={rating}
             disabled={submitted}
             onChange={this.handleChange} />
@@ -72,12 +73,14 @@ export default class Rating extends React.Component {
 }
 
 Rating.defaultProps = {
+  total: 5,
   title: 'Rate this product',
   buttonText: 'Apply',
   successMessage: 'Thanks for your rating!'
 };
 
 Rating.propTypes = {
+  stars: PropTypes.number,
   title: PropTypes.string,
   buttonText: PropTypes.string,
   successMessage: PropTypes.string,
