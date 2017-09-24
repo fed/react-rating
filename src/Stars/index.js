@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import uniqueId from 'lodash/uniqueId';
+import isInteger from 'lodash/isInteger';
 import './styles.css';
 
 export default class Stars extends React.Component {
@@ -42,7 +43,7 @@ export default class Stars extends React.Component {
 
     // If passed in an invalid number of stars to render such as a
     // negative or non-integer value, fallback to `5`.
-    const numberOfStars = Number.isInteger(total) && total > 0 ? total : 5;
+    const numberOfStars = isInteger(total) && total > 0 ? total : 5;
     const stars = Array(numberOfStars)
       .fill(0)
       .map((el, index) => {
