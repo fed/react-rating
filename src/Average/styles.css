@@ -15,7 +15,7 @@
 }
 
 .Average__stars {
-  display: inherit; /* @TODO: why do i need this? */
+  display: inherit;
 }
 
 .Average__star {
