@@ -24,6 +24,12 @@ export default function Styleguide() {
           onSubmit={(rating) => console.info(`Submitted with rating: ${rating}`)} />
       </Preview>
 
+      <Preview title="Interactive rating component with -20 stars defaults to 5">
+        <Rating
+          total={-20}
+          onSubmit={(rating) => console.info(`Submitted with rating: ${rating}`)} />
+      </Preview>
+
       <Preview title="Non-interactive Average rating component, 0 stars, default view">
         <Average />
       </Preview>
