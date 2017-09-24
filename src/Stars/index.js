@@ -50,7 +50,7 @@ export default class Stars extends React.Component {
         const value = index + 1;
         const name = `${id}-stars-${value}`;
         const starClassName = classnames('Star', {
-          'Star--active': value < selected || value < hovered
+          'Star--active': value <= selected || value <= hovered
         });
 
         return (
