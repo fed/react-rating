@@ -1,14 +1,10 @@
-# Campaign Monitor UI Engineer Coding Test
+# React Rating Stars UI
 
-## Part 1: Static Version
-
-> Live demo: https://react-rating-static.surge.sh
+## Static Version
 
 Check out the `./static` directory.
 
-## Part 2: Reusable React Component
-
-> Live demo: https://react-rating.surge.sh
+## React Component
 
 Check out the `./src` directory and look for the `{Rating, Average, Stars}` folders.
 
@@ -21,7 +17,7 @@ Some notes on these components:
 * **Browser support:** Tested on Chrome, Firefox, Safari, Internet Explorer 11 and Edge.
 * **Tests**: I've written a bunch of tests to showcase different approaches to making sure the project works and to give an idea of how I'd go about testing the project: functional tests simulating events, mounting components to make sure they render without crashing, snapshot tests to make sure the output stays the same for the same set of props, tests to make sure the component's state is correct as the user interacts with the UI, mocking external helper methods, etc. This project is not as battled tested as it should be to be shipped to production, though.
 * **Styles:** To keep it simple I've just written vanilla CSS (no pre-processors such as Less/Sass, no post-processing plugins to allow variables or nesting selectors, no CSS modules, etc.). What we should probably do is to abstract out and reuse some recurring values such as background/border colours and the like. Also, I've used BEM to name my classes.
-* **Styleguide:** I've also provided a `Styleguide` and `Preview` components just to showcase the other two. Might as well have used [Styleguidist](https://github.com/styleguidist/react-styleguidist) or [Storybook](https://github.com/storybooks/storybook) but decided to keep it simple.
+* **Styleguide:** I've also provided a `Styleguide` and `Preview` components just to showcase the other two. Could have used [Styleguidist](https://github.com/styleguidist/react-styleguidist) or [Storybook](https://github.com/storybooks/storybook) but decided to keep it simple.
 
 ## Running the project
 
